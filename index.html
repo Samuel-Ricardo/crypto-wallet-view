@@ -6,11 +6,19 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title> Crypto Wallet <title\>
+		<title> Crypto Wallet </title>
+        
         <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script> 
     </head>
 
 	<body>
-		
+
     </body>
+
+    <script>
+        var web3 = new Web3(window.ethereum);
+        web3.eth.getBalance("PUBLIC_KEY").then(value => {
+            console.log(value);
+        })
+    </script>
 </html>
