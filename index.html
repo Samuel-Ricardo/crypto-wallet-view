@@ -12,13 +12,19 @@
     </head>
 
 	<body>
-
+        <h2>Saldo na Carteira de Ethereum</h2>
+        <p></p>
     </body>
 
     <script>
-        var web3 = new Web3(window.ethereum);
-        web3.eth.getBalance("PUBLIC_KEY").then(value => {
+        const web3 = new Web3(window.ethereum);
+        
+        web3.eth.getBalance("YOUR_ETHER_WALLET_PUBLIC_KEY").then(value => {
             console.log(value);
+
+            // const format = value / 10**18;
+            const format = web3.utils.fromWei(value, "ether");
+            document.querySelector('p').innerHTML = format.toString();
         })
     </script>
 </html>
